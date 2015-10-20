@@ -192,7 +192,8 @@ public class CephBackupStorageBase extends BackupStorageBase {
     }
 
     private <T extends AgentResponse> void httpCall(final String path, final AgentCommand cmd, Class<T> retClass, final ReturnValueCompletion<T> callback) {
-        httpCall(path, cmd, retClass, callback, 5, TimeUnit.MINUTES);
+        //httpCall(path, cmd, retClass, callback, 5, TimeUnit.MINUTES);
+        httpCall(path, cmd, retClass, callback, 30, TimeUnit.MINUTES);
     }
 
     private <T extends AgentResponse> void httpCall(final String path, final AgentCommand cmd, final Class<T> retClass, final ReturnValueCompletion<T> callback, final long timeout, final TimeUnit timeUnit) {
