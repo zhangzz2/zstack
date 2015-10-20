@@ -18,7 +18,7 @@ public abstract class CephMonBase {
     protected void checkTools() {
         Ssh ssh = new Ssh();
         ssh.setHostname(self.getHostname()).setUsername(self.getSshUsername()).setPassword(self.getSshPassword())
-                .checkTool("ceph", "rbd").runErrorByExceptionAndClose();
+                .checkTool("/opt/mds/lich/libexec/lich", "/opt/mds/lich/sbin/lichd").runErrorByExceptionAndClose();
     }
 
     public CephMonAO getSelf() {
